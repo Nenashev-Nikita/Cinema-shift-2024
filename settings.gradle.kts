@@ -23,3 +23,5 @@ rootProject.name = "Cinema"
 include(":app")
 
 include(":design:resources")
+
+include(":component:arch")
