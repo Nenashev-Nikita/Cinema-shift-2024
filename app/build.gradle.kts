@@ -49,6 +49,11 @@ android {
 
 dependencies {
 
+	implementation(project(":component:arch"))
+	implementation(project(":component:token"))
+	implementation(project(":component:network"))
+	implementation(project(":design:resources"))
+
 	implementation(libs.dagger.compiler)
 	implementation(libs.dagger)
 	ksp(libs.dagger.compiler)
