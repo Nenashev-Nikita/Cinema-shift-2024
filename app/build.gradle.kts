@@ -49,6 +49,15 @@ android {
 
 dependencies {
 
+	implementation(project(":util:formatting"))
+	implementation(project(":util:di"))
+	implementation(project(":component:arch"))
+	implementation(project(":component:token"))
+	implementation(project(":component:network"))
+	implementation(project(":shared:loan"))
+	implementation(project(":design:resources"))
+	implementation(project(":feature:history"))
+
 	implementation(libs.dagger.compiler)
 	implementation(libs.dagger)
 	ksp(libs.dagger.compiler)
