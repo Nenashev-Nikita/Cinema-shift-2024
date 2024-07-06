@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="ruble">₽</string>
+
+	<string name="approved">Одобрена</string>
+	<string name="registered">На рассмотрении</string>
+	<string name="rejected">Отклонена</string>
+</resources>
