@@ -32,3 +32,5 @@ include(":util:formatting")
 include(":util:di")
 
 include(":shared:loan")
+
+include(":feature:history")
