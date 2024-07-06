@@ -25,3 +25,4 @@ include(":app")
 include(":design:resources")
 
 include(":component:arch")
+include(":component:token")
