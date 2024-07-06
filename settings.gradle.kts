@@ -26,3 +26,4 @@ include(":design:resources")
 
 include(":component:arch")
 include(":component:token")
+include(":component:network")
