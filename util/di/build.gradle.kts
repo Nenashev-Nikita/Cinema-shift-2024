@@ -1,11 +1,12 @@
 plugins {
 	alias(libs.plugins.android.library)
 	alias(libs.plugins.jetbrains.kotlin.android)
+	alias(libs.plugins.jetbrains.kotlin.serialization)
 	alias(libs.plugins.google.ksp)
 }
 
 android {
-	namespace = "com.example.cinema.component.arch"
+	namespace = "com.example.cinema.util.di"
 	compileSdk = 34
 
 	defaultConfig {
@@ -21,6 +22,12 @@ android {
 	kotlinOptions {
 		jvmTarget = "17"
 	}
+	buildFeatures {
+		compose = true
+	}
+	composeOptions {
+		kotlinCompilerExtensionVersion = "1.5.14"
+	}
 	packaging {
 		resources {
 			excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -34,7 +41,8 @@ dependencies {
 	implementation(libs.dagger)
 	ksp(libs.dagger.compiler)
 
-	implementation(libs.androidx.lifecycle.viewmodel)
+	implementation(libs.androidx.lifecycle.viewmodel.compose)
+	implementation(libs.androidx.ui.android)
 
 	// Unit-тестирование
 	testImplementation(libs.junit)

@@ -29,5 +29,6 @@ include(":component:token")
 include(":component:network")
 
 include(":util:formatting")
+include(":util:di")
 
 include(":shared:loan")
