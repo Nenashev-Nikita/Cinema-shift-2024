@@ -39,6 +39,7 @@ dependencies {
 	implementation(project(":util:di"))
 	implementation(project(":component:arch"))
 	implementation(project(":design:component"))
+	implementation(project(":design:resources"))
 
 	implementation(libs.dagger.compiler)
 	implementation(libs.dagger)
