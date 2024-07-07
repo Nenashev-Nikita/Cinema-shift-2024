@@ -35,3 +35,4 @@ include(":shared:loan")
 include(":shared:film")
 
 include(":feature:history")
+include(":feature:poster")
