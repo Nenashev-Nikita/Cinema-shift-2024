@@ -55,6 +55,7 @@ dependencies {
 	implementation(project(":component:token"))
 	implementation(project(":component:network"))
 	implementation(project(":shared:loan"))
+	implementation(project(":shared:film"))
 	implementation(project(":design:resources"))
 	implementation(project(":feature:history"))
 

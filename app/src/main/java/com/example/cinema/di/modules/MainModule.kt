@@ -6,6 +6,7 @@ import dagger.Module
 	includes = [
 		HistoryModule::class,
 		LoadModule::class,
+		FilmModule::class,
 	]
 )
 interface MainModule
