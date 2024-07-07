@@ -58,6 +58,7 @@ dependencies {
 	implementation(project(":shared:film"))
 	implementation(project(":design:resources"))
 	implementation(project(":feature:history"))
+	implementation(project(":feature:poster"))
 
 	implementation(libs.dagger.compiler)
 	implementation(libs.dagger)
