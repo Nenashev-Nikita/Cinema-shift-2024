@@ -28,4 +28,6 @@ include(":component:arch")
 include(":component:token")
 include(":component:network")
 
+include(":feature:poster")
+
 include(":util:di")

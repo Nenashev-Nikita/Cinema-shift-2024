@@ -54,6 +54,8 @@ dependencies {
 	implementation(project(":component:network"))
 	implementation(project(":design:resources"))
 
+	implementation(project(":feature:poster"))
+
 	implementation(libs.dagger.compiler)
 	implementation(libs.dagger)
 	ksp(libs.dagger.compiler)
