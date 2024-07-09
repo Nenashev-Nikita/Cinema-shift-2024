@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="error_title">Произошла ошибка</string>
+	<string name="error_try_again">Повторить</string>
+	<string name="error_unknown_error">Неизвестная ошибка</string>
+
+	<string name="film_rating">%1$s - %2$s</string>
+	<string name="kinopoisk">kinopoisk</string>
+
+	<string name="film_detail">%1$s, %2$s</string>
+	<string name="film_name">%1$s (%2$s)</string>
+</resources>
