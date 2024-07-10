@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -79,7 +80,8 @@ private fun CardCinema(
 			painter = rememberAsyncImagePainter(IMG_URL + img),
 			contentDescription = null,
 			modifier = Modifier
-				.size(300.dp)
+				.fillMaxWidth()
+				.aspectRatio(1F)
 				.clip(RoundedCornerShape(CinemaTheme.shapes.medium)),
 			contentScale = ContentScale.FillBounds,
 		)
@@ -164,7 +166,7 @@ fun RatingsFilm(
 	userRatings: Float
 ) {
 	Column {
-		RatingBar(rating = userRatings.toDouble())
+		RatingBar(rating = userRatings)
 
 		Text(
 			text = stringResource(
@@ -177,15 +179,14 @@ fun RatingsFilm(
 		)
 	}
 }
-
+//TODO исправить компонент, чтобы смог правильно отображать "заполнение" звезд
 @Composable
 fun RatingBar(
-	rating: Double = 0.0,
-	modifier: Modifier = Modifier,
+	rating: Float = 0.0f,
 ) {
 
-	var isHalfStar = (rating % 1) != 0.0
-	Row(modifier = modifier) {
+	var isHalfStar = (rating % 1) != 0.0f
+	Row() {
 		for (index in 1..5) {
 			if (index <= rating / 2) {
 				Star(
