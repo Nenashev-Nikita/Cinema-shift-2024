@@ -144,7 +144,7 @@ fun NameFilm(
 			ageRating,
 		),
 		color = CinemaTheme.colors.textPrimary,
-		style = CinemaTheme.typography.title,
+		style = CinemaTheme.typography.titleMedium,
 	)
 }
 

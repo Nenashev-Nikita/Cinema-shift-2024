@@ -12,14 +12,16 @@ import com.example.cinema.design.resources.R
 
 @Immutable
 data class CinemaTypography(
-	val title: TextStyle,
+	val titleMedium: TextStyle,
+	val titleLarge: TextStyle,
 	val paragraph: TextStyle,
 	val regular: TextStyle,
 )
 
 val LocalCinemaTypography = staticCompositionLocalOf {
 	CinemaTypography(
-		title = TextStyle.Default,
+		titleMedium = TextStyle.Default,
+		titleLarge = TextStyle.Default,
 		paragraph = TextStyle.Default,
 		regular = TextStyle.Default,
 	)
@@ -29,6 +31,7 @@ val interFontFamily = FontFamily(
 	Font(R.font.inter_medium, FontWeight(400), FontStyle.Normal),
 	Font(R.font.inter_semibold, FontWeight(500), FontStyle.Normal),
 	Font(R.font.inter_bold, FontWeight(600), FontStyle.Normal),
+	Font(R.font.inter_extrabold, FontWeight(700), FontStyle.Normal),
 )
 
 val robotoFontFamily = FontFamily(
@@ -37,11 +40,18 @@ val robotoFontFamily = FontFamily(
 )
 
 val cinemaTypography = CinemaTypography(
-	title = TextStyle(
+	titleMedium = TextStyle(
 		fontSize = 20.sp,
 		lineHeight = 24.sp,
 		fontStyle = FontStyle.Normal,
 		fontWeight = FontWeight(600),
+		fontFamily = interFontFamily,
+	),
+	titleLarge = TextStyle(
+		fontSize = 24.sp,
+		lineHeight = 30.sp,
+		fontStyle = FontStyle.Normal,
+		fontWeight = FontWeight(700),
 		fontFamily = interFontFamily,
 	),
 	paragraph = TextStyle(

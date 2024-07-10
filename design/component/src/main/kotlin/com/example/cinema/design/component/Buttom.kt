@@ -9,7 +9,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.cinema.design.resources.ui.theme.CinemaTheme
@@ -38,7 +37,7 @@ fun Button(
 		Text(
 			text = text,
 			color = CinemaTheme.colors.textInvert,
-			style = CinemaTheme.typography.title.copy(fontSize = 16.sp)
+			style = CinemaTheme.typography.titleMedium.copy(fontSize = 16.sp)
 		)
 	}
 }
