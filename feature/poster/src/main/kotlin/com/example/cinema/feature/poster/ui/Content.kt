@@ -18,7 +18,7 @@ import com.example.cinema.feature.poster.presentation.model.FilmUi
 @Composable
 fun Content(
 	films: List<FilmUi>,
-//	applyIntent: () -> Unit
+	onFilmClicked: (loanId: Long) -> Unit,
 ) {
 	LazyColumn(
 		modifier = Modifier
@@ -46,7 +46,7 @@ fun Content(
 
 			Button(
 				text = stringResource(id = R.string.buttom),
-				onClick = { /*TODO*/ },
+				onClick = { onFilmClicked(it.id.toLong()) },
 			)
 
 			Spacer(modifier = Modifier.height(CinemaTheme.padding.large))

@@ -9,7 +9,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.cinema.design.component.AppBar
@@ -25,6 +24,7 @@ import com.example.cinema.util.di.findActivity
 @Composable
 fun FilmScreen(
 	filmId: Long,
+	onClickActionBar: () -> Unit,
 ) {
 
 	val context = LocalContext.current
@@ -43,7 +43,8 @@ fun FilmScreen(
 
 	Column(modifier = Modifier.fillMaxSize()) {
 		AppBar(
-			leftIcon = ImageVector.vectorResource(id = R.drawable.line)
+			leftIcon = ImageVector.vectorResource(id = R.drawable.line),
+			onLeftButtonClick = onClickActionBar,
 		)
 
 		when (val state = filmState) {
