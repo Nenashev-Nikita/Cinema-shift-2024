@@ -7,7 +7,6 @@ data class FilmUi (
 	val id: String,
 	val name: String,
 	val originalName: String,
-	val description: String,
 	val releaseDate: String,
 	val ageRating: RatingUi,
 	val genres: List<String>,

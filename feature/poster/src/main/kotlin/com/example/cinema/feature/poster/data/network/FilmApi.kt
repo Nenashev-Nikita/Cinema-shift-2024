@@ -9,7 +9,4 @@ interface FilmApi {
 
 	@GET("today")
 	suspend fun getAll(): PosterModel
-
-	@GET("film/{filmId}")
-	suspend fun get(@Path("filmId") filmId: Long): FilmModel
 }

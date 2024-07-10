@@ -3,8 +3,6 @@ package com.example.cinema.feature.poster.data.converter
 import com.example.cinema.feature.poster.data.model.FilmModel
 import com.example.cinema.feature.poster.data.model.PosterModel
 import com.example.cinema.feature.poster.domain.entity.Film
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 import javax.inject.Inject
 
 class PosterConverter @Inject constructor(
@@ -33,7 +31,6 @@ class FilmConverter @Inject constructor(
 			id = model.id,
 			name = model.name,
 			originalName = model.originalName,
-			description = model.description,
 			releaseDate = model.releaseDate,
 			ageRating = model.ageRating,
 			genres = model.genres,
