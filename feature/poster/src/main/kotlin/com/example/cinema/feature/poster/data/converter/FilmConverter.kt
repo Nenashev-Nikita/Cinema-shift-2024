@@ -1,25 +1,8 @@
 package com.example.cinema.feature.poster.data.converter
 
 import com.example.cinema.feature.poster.data.model.FilmModel
-import com.example.cinema.feature.poster.data.model.PosterModel
 import com.example.cinema.feature.poster.domain.entity.Film
 import javax.inject.Inject
-
-class PosterConverter @Inject constructor(
-	private val converter: FilmConverter
-) {
-
-	operator fun invoke(model: PosterModel): List<Film> =
-		model.films.map { converter(it) }
-}
-
-class FilmsConverter @Inject constructor(
-	private val filmConverter: FilmConverter
-) {
-
-	operator fun invoke(model: List<FilmModel>): List<Film> =
-		model.map { filmConverter(it) }
-}
 
 class FilmConverter @Inject constructor(
 	private val userRatingsConvert: UserRatingsConvert,

@@ -13,7 +13,7 @@ interface PosterModule {
 	@Binds
 	@IntoMap
 	@ViewModelKey(PosterViewModel::class)
-	fun providesHPosterViewModule(
+	fun bindsPosterViewModule(
 		viewModel: PosterViewModel
 	): ViewModel
 }
