@@ -2,16 +2,26 @@ package com.example.cinema.feature.poster.ui
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.KeyboardArrowLeft
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.KeyboardArrowLeft
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.res.vectorResource
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.cinema.design.component.AppBar
 import com.example.cinema.design.component.Error
 import com.example.cinema.design.component.Loading
 import com.example.cinema.design.component.Screen
+import com.example.cinema.feature.poster.R
 import com.example.cinema.feature.poster.di.PosterComponentViewModel
 import com.example.cinema.feature.poster.di.PosterRoot
 import com.example.cinema.feature.poster.presentation.PosterState
@@ -35,6 +45,7 @@ fun PosterScreen() {
 	}
 
 	Column(modifier = Modifier.fillMaxSize()) {
+		AppBar(title = stringResource(id = R.string.poster_title))
 
 		when (val state = posterState) {
 			is PosterState.Initial,
