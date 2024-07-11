@@ -1,11 +1,11 @@
 package com.example.cinema.di.modules
 
 import com.example.cinema.component.network.createRetrofitService
-import com.example.cinema.feature.poster.data.network.FilmApi
-import com.example.cinema.feature.poster.data.repository.FilmRepositoryImpl
+import com.example.cinema.feature.poster.data.network.PosterApi
+import com.example.cinema.feature.poster.data.repository.PosterRepositoryImpl
 import com.example.cinema.feature.poster.di.DaggerPosterComponent
 import com.example.cinema.feature.poster.di.PosterComponent
-import com.example.cinema.feature.poster.domain.repository.FilmRepository
+import com.example.cinema.feature.poster.domain.repository.PosterRepository
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -34,11 +34,11 @@ interface PosterDataModule {
 	companion object {
 
 		@Provides
-		fun provideLoadApi(retrofit: Retrofit): FilmApi = createRetrofitService(retrofit)
+		fun providePosterApi(retrofit: Retrofit): PosterApi = createRetrofitService(retrofit)
 	}
 
 	@Binds
-	fun bindLoadRepository(
-		filmRepositoryImpl: FilmRepositoryImpl
-	): FilmRepository
+	fun bindPosterRepository(
+		posterRepositoryImpl: PosterRepositoryImpl
+	): PosterRepository
 }

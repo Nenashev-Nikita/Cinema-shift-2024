@@ -8,10 +8,12 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.cinema.design.component.AppBar
 import com.example.cinema.design.component.Error
 import com.example.cinema.design.component.Loading
-import com.example.cinema.design.component.Screen
+import com.example.cinema.feature.poster.R
 import com.example.cinema.feature.poster.di.PosterComponentViewModel
 import com.example.cinema.feature.poster.di.PosterRoot
 import com.example.cinema.feature.poster.presentation.PosterState
@@ -19,7 +21,9 @@ import com.example.cinema.feature.poster.presentation.PosterViewModel
 import com.example.cinema.util.di.findActivity
 
 @Composable
-fun PosterScreen() {
+fun PosterScreen(
+	onFilmSelected: (loanId: Long) -> Unit,
+) {
 	val context = LocalContext.current
 	val component = (context.findActivity().application as? PosterRoot)?.posterComponentBuilder?.build()
 
@@ -35,6 +39,7 @@ fun PosterScreen() {
 	}
 
 	Column(modifier = Modifier.fillMaxSize()) {
+		AppBar(title = stringResource(id = R.string.poster_title))
 
 		when (val state = posterState) {
 			is PosterState.Initial,
@@ -45,7 +50,10 @@ fun PosterScreen() {
 				onRetry = { posterViewModel.loadPoster() },
 			)
 
-			is PosterState.Content -> Content(state.films)
+			is PosterState.Content -> Content(
+				films = state.films,
+				onFilmClicked = onFilmSelected,
+			)
 		}
 	}
 }

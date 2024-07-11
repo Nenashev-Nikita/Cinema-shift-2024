@@ -8,17 +8,19 @@ val lightPrimary = Color(0xFFFFFFFF)
 val lightTextPrimary = Color(0xFF141C24)
 val lightSecondary = Color(0xFFF5F5F8)
 val lightTextTertiary = Color(0xFF637083)
-val lightIndicator = Color(0xFFFFB219)
+val lightIndicator = Color(0xFFCED2DA)
 val lightBrand = Color(0xFF9534D2)
 val lightTextInvert = Color(0xFFFFFFFF)
+val lightTextQuartenery = Color(0xFF97A1AF)
 
 val darkPrimary = Color(0xFFFFFFFF)
 val darkTextPrimary = Color(0xFF141C24)
 val darkSecondary = Color(0xFFF5F5F8)
 val darkTextTertiary = Color(0xFF637083)
-val darkIndicator = Color(0xFFFFB219)
+val darkIndicator = Color(0xFFCED2DA)
 val darkBrand = Color(0xFF9534D2)
 val darkTextInvert = Color(0xFFFFFFFF)
+val darkTextQuartenery = Color(0xFF97A1AF)
 
 @Immutable
 data class CinemaColors(
@@ -29,6 +31,7 @@ data class CinemaColors(
 	val indecator: Color,
 	val brand: Color,
 	val textInvert: Color,
+	val textQuartenery: Color,
 )
 
 val LocalCinemaColors = staticCompositionLocalOf {
@@ -40,6 +43,7 @@ val LocalCinemaColors = staticCompositionLocalOf {
 		indecator = Color.Unspecified,
 		brand = Color.Unspecified,
 		textInvert = Color.Unspecified,
+		textQuartenery = Color.Unspecified,
 	)
 }
 
@@ -51,6 +55,7 @@ val LightColors = CinemaColors(
 	indecator = lightIndicator,
 	brand = lightBrand,
 	textInvert = lightTextInvert,
+	textQuartenery = lightTextQuartenery,
 )
 
 val DarkColors = CinemaColors(
@@ -61,4 +66,5 @@ val DarkColors = CinemaColors(
 	indecator = darkIndicator,
 	brand = darkBrand,
 	textInvert = darkTextInvert,
+	textQuartenery = darkTextQuartenery,
 )

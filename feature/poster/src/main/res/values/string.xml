@@ -6,6 +6,7 @@
 	<string name="rating_R">16+</string>
 	<string name="rating_NC17">18+</string>
 
-
 	<string name="buttom">Подробнее</string>
+
+	<string name="poster_title">Афиша</string>
 </resources>

@@ -30,5 +30,6 @@ include(":component:token")
 include(":component:network")
 
 include(":feature:poster")
+include(":feature:film")
 
 include(":util:di")

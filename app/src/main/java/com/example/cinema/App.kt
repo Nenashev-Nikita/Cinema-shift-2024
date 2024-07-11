@@ -3,16 +3,21 @@ package com.example.cinema
 import android.app.Application
 import com.example.cinema.di.AppComponent
 import com.example.cinema.di.DaggerAppComponent
+import com.example.cinema.feature.film.di.FilmComponent
+import com.example.cinema.feature.film.di.FilmRoot
 import com.example.cinema.feature.poster.di.PosterComponent
 import com.example.cinema.feature.poster.di.PosterRoot
 import javax.inject.Inject
 
-class App : Application(), PosterRoot {
+class App : Application(), PosterRoot, FilmRoot {
 
 	private lateinit var appComponent: AppComponent
 
 	@Inject
 	override lateinit var posterComponentBuilder: PosterComponent.Builder
+
+	@Inject
+	override lateinit var filmComponentBuilder: FilmComponent.Builder
 
 	override fun onCreate() {
 		super.onCreate()

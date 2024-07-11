@@ -14,7 +14,6 @@ class FilmsUiConverter @Inject constructor(
 
 class FilmUiConverter @Inject constructor(
 	private val ratingUiConverter: RatingUiConverter,
-	private val dateConverter: DateConverter,
 ) {
 
 	operator fun invoke(model: Film): FilmUi =
@@ -22,8 +21,7 @@ class FilmUiConverter @Inject constructor(
 			id = model.id,
 			name = model.name,
 			originalName = model.originalName,
-			description = model.description,
-			releaseDate = dateConverter(model.releaseDate),
+			releaseDate = model.releaseDate.takeLast(4),
 			ageRating = ratingUiConverter(model.ageRating),
 			genres = model.genres,
 			userRatings = model.userRatings,

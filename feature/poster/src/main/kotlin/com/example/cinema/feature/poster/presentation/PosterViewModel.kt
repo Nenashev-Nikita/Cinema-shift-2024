@@ -6,6 +6,7 @@ import com.example.cinema.feature.poster.presentation.converter.FilmsUiConverter
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
+import kotlin.coroutines.cancellation.CancellationException
 
 class PosterViewModel @Inject constructor(
 	private val getFilmsUseCase: GetFilmsUseCase,
@@ -19,9 +20,14 @@ class PosterViewModel @Inject constructor(
 		launch {
 			_state.value = PosterState.Loading
 
+			try {
 				val films = getFilmsUseCase()
 				_state.value = PosterState.Content(filmsUiConverter(films))
-
+			} catch (ce: CancellationException) {
+				throw ce
+			} catch (ex: Exception) {
+				_state.value = PosterState.Failure(ex.localizedMessage.orEmpty())
+			}
 		}
 	}
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="rating_G">0+</string>
+	<string name="rating_PG">6+</string>
+	<string name="rating_PG13">13+</string>
+	<string name="rating_R">16+</string>
+	<string name="rating_NC17">18+</string>
+
+	<string name="buttom">Посмотреть расписание</string>
+
+	<string name="expand_text">раскрыть</string>
+	<string name="collapse_text">cвернуть</string>
+	<string name="ellipsis">.... </string>
+</resources>

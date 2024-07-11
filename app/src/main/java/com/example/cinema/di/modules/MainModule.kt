@@ -5,6 +5,7 @@ import dagger.Module
 @Module(
 	includes = [
 		PosterModule::class,
+		FilmModule::class,
 	]
 )
 interface MainModule
